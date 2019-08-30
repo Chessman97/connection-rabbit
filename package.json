@@ -1,0 +1,42 @@
+{
+  "name": "connection-rabbit",
+  "version": "0.1.0",
+  "description": "RabbitMQ amqp.node",
+  "main": "send.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r ts-node/register src/send.ts",
+    "build": "rimraf build && tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/send.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chessman97/connection-rabbit"
+  },
+  "keywords": [
+    "RabbitMQ"
+  ],
+  "author": "efanov mikhail",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.7.1",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@types/request-promise": "^4.1.44",
+    "amqplib": "^0.5.5",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.3.0"
+  }
+}
