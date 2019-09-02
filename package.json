@@ -2,13 +2,13 @@
   "name": "connection-rabbit",
   "version": "0.1.0",
   "description": "RabbitMQ amqp.node",
-  "main": "send.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r ts-node/register src/send.ts",
+    "start": "node -r ts-node/register src/main.ts",
     "starter": "node -r ts-node/register src/recieve.ts",
     "build": "rimraf build && tsc -p .",
-    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/send.ts"
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/main.ts"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "author": "efanov mikhail",
   "license": "ISC",
   "devDependencies": {
+    "@types/bull": "^3.10.2",
     "@types/node": "^12.7.1",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
@@ -36,6 +37,7 @@
   "dependencies": {
     "@types/request-promise": "^4.1.44",
     "amqplib": "^0.5.5",
+    "bull": "^3.10.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "ts-node": "^8.3.0"
