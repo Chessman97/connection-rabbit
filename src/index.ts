@@ -39,7 +39,7 @@ useExpressServer(app, {
     controllers: [QueueController],
 });
 
-app.use(arenaConfig);
+app.use('/', arenaConfig);
 //Запуск приложения на порту 3000
 app.listen(3000, () => {
     console.log('Server is running on 3000');

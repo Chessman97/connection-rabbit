@@ -1,4 +1,4 @@
-import { Get, HttpCode, JsonController } from 'routing-controllers';
+import { Get, JsonController } from 'routing-controllers';
 
 import { Consumer } from '../queue_bull/consumer';
 import { CreateQueue } from '../queue_bull/main';
@@ -13,11 +13,10 @@ export class QueueController {
         private consumerService: Consumer
     ) { }
 
-    @HttpCode(200)
     @Get('/message')
     private async callBull(): Promise<string> {
         await this.producerService.callProducer(this.queue.getQueue());
         await this.consumerService.callConsumer(this.queue.getQueue());
-        return 'Message sending every minutes..'
+        return 'Messages are sending every minute..'
     }
 }
