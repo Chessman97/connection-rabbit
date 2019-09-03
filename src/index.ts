@@ -1,12 +1,13 @@
 import 'reflect-metadata';
 
-import * as express from 'express';
+// import Arena = require('bull-arena');
+import Arena from 'bull-arena';
+import express from 'express';
 import { useContainer, useExpressServer } from 'routing-controllers';
 import { Container } from 'typedi';
 
 import { QueueController } from './controllers/QueueController';
 
-import Arena = require('bull-arena');
 //Создаем приложение Express
 const app = express();
 useContainer(Container);

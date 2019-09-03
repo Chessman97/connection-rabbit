@@ -1,4 +1,4 @@
-import * as bull from 'bull';
+import bull from 'bull';
 import { Service } from 'typedi';
 
 //For run
