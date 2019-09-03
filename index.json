@@ -1,0 +1,7 @@
+{
+    "name": "my_queue",
+    "port": 6379,
+    "host": "127.0.0.1",
+    "hostId": "AWS Server 2",
+    "type": "bee"
+}
