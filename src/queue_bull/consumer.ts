@@ -1,7 +1,10 @@
 import * as bull from 'bull';
+import { Service } from 'typedi';
 
-import { CreateQueue } from './main';
+//For run
+//import { CreateQueue } from './main';
 
+@Service()
 export class Consumer {
     async  callConsumer(myFirstQueue: bull.Queue): Promise<void> {
         myFirstQueue.process(async (job: bull.Job, done: bull.DoneCallback) => {
@@ -9,9 +12,11 @@ export class Consumer {
             done();
         });
         myFirstQueue.on('completed', job => {
-            console.log(`Job with id has been completed `, + job.id);
+            console.log(`Job with id has been completed ` + job.id);
+            console.log(job);
         });
+        console.log('Consumer is running');
     }
 }
 
-(new Consumer()).callConsumer((new CreateQueue()).getQueue());
+//(new Consumer()).callConsumer((new CreateQueue()).getQueue());
